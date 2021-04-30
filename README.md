@@ -22,6 +22,18 @@ Add the dependency
 
 ```
 dependencies {
-    implementation 'com.github.niraj-prajapati:StoryView:0.0.1'
+    implementation 'com.github.niraj-prajapati:StoryView:0.0.2'
 }
+```
+
+
+<h1>How to use?</h1>
+
+```
+StoryView storyView = new StoryView.Builder()
+        .with(MainActivity.this)
+        .setStoryUserList(storyUsers)
+        .build();
+        
+storyView.showStories();
 ```
