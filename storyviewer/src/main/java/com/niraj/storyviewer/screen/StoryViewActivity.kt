@@ -1,15 +1,13 @@
 /*
- * Created by Niraj Prajapati on 30/4/21 12:07 PM
+ * Created by Niraj Prajapati on 30/4/21 2:01 PM
  * Copyright (c) 2021. All rights reserved.
- * Last modified at 30/4/21 12:07 PM
+ * Last modified at 30/4/21 2:01 PM
  */
 
 package com.niraj.storyviewer.screen
 
 import android.animation.Animator
 import android.animation.ValueAnimator
-import android.content.Context
-import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.util.Log
@@ -35,10 +33,19 @@ import kotlinx.coroutines.async
 class StoryViewActivity : AppCompatActivity(), PageViewOperator {
 
     private lateinit var pagerAdapter: StoryPagerAdapter
+    private var storyUserList: ArrayList<StoryUser> = ArrayList()
+    private var currentPage: Int = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_story_view)
+
+        storyUserList =
+            intent.getParcelableArrayListExtra<StoryUser>("storyUserList") as ArrayList<StoryUser>
+
+        //todo: page not setting
+        currentPage = intent.getIntExtra("currentPage", 0)
+
         setUpPager()
     }
 
@@ -200,13 +207,5 @@ class StoryViewActivity : AppCompatActivity(), PageViewOperator {
 
     companion object {
         val progressState = SparseIntArray()
-        var storyUserList: ArrayList<StoryUser> = ArrayList()
-        var currentPage: Int = 0
-
-        fun build(context: Context) {
-            if (storyUserList.isEmpty()) throw Exception("storyUserList should not be empty")
-
-            context.startActivity(Intent(context, StoryViewActivity::class.java))
-        }
     }
 }

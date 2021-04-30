@@ -1,7 +1,7 @@
 /*
- * Created by Niraj Prajapati on 30/4/21 12:07 PM
+ * Created by Niraj Prajapati on 30/4/21 2:01 PM
  * Copyright (c) 2021. All rights reserved.
- * Last modified at 30/4/21 10:57 AM
+ * Last modified at 30/4/21 12:18 PM
  */
 
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
@@ -24,6 +24,7 @@ allprojects {
     repositories {
         google()
         jcenter()
+        maven { url 'https://jitpack.io' }
     }
 }
 

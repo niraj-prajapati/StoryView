@@ -1,7 +1,7 @@
 /*
- * Created by Niraj Prajapati on 30/4/21 12:07 PM
+ * Created by Niraj Prajapati on 30/4/21 2:01 PM
  * Copyright (c) 2021. All rights reserved.
- * Last modified at 30/4/21 12:07 PM
+ * Last modified at 30/4/21 1:50 PM
  */
 
 package com.niraj.storyviewerexample;
@@ -14,7 +14,7 @@ import androidx.appcompat.widget.AppCompatButton;
 
 import com.niraj.storyviewer.data.Story;
 import com.niraj.storyviewer.data.StoryUser;
-import com.niraj.storyviewer.screen.StoryViewActivity;
+import com.niraj.storyviewer.utils.StoryView;
 
 import java.util.ArrayList;
 
@@ -43,11 +43,9 @@ public class MainActivity extends AppCompatActivity {
                 stories.add(new Story("https://player.vimeo.com/external/363465031.sd.mp4?s=15b706ccd3c0e1d9dc9290487ccadc7b20fff7f1&profile_id=165&oauth2_token_id=57447761", 0L));
                 stories.add(new Story("https://player.vimeo.com/external/422787651.sd.mp4?s=ec96f3190373937071ba56955b2f8481eaa10cce&profile_id=165&oauth2_token_id=57447761", 0L));
 
-                storyUsers.add(new StoryUser("user 1","https://randomuser.me/api/portraits/men/1.jpg",stories));
+                storyUsers.add(new StoryUser("user 1", "https://randomuser.me/api/portraits/men/1.jpg", stories));
 
-                StoryViewActivity.Companion.setStoryUserList(storyUsers);
-                StoryViewActivity.Companion.setCurrentPage(3);
-                StoryViewActivity.Companion.build(MainActivity.this);
+                new StoryView.Builder().with(MainActivity.this).setStoryUserList(storyUsers).setCurrentPage(9).build().showStories();
             }
         });
     }
