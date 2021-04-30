@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Created by Niraj Prajapati on 30/4/21 12:07 PM
+  ~ Copyright (c) 2021. All rights reserved.
+  ~ Last modified at 30/4/21 10:57 AM
+  -->
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <View
+        android:id="@+id/back_progress"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/progress_secondary" />
+
+    <View
+        android:id="@+id/front_progress"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/progress_primary"
+        android:visibility="invisible"
+        tools:visibility="visible" />
+
+    <View
+        android:id="@+id/max_progress"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#fff"
+        android:visibility="gone" />
+</FrameLayout>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Created by Niraj Prajapati on 30/4/21 12:07 PM
+  ~ Copyright (c) 2021. All rights reserved.
+  ~ Last modified at 30/4/21 10:57 AM
+  -->
+
+<resources>
+    <string name="app_name">Story Viewer</string>
+</resources>
